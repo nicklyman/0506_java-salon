@@ -70,4 +70,18 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Add a new client for Joe");
   }
 
+  @Test
+  public void clientIsAddedAndDisplayed() {
+    goTo("http://localhost:4567/stylists/new");
+    fill("#stylist_name").with("Joe");
+    submit(".btn");
+    click("a", withText("View the List of Stylists"));
+    click("a", withText("Joe"));
+    click("a", withText("Add a New Client"));
+    fill("#client_name").with("Sara");
+    submit(".btn");
+    click("a", withText("View the List of Stylists"));
+    click("a", withText("Joe"));
+    assertThat(pageSource()).contains("Sara");
+  }
 }
