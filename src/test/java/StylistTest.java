@@ -31,4 +31,10 @@ public class StylistTest {
     Stylist testStylist = new Stylist("Joe");
     assertEquals("Joe", testStylist.getStylistName());
   }
+
+  @Test
+  public void all_StylistListEmptyAtFirst() {
+    assertEquals(Stylist.all().size(), 0);
+  }
+
 }
