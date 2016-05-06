@@ -36,4 +36,11 @@ public class ClientTest {
   public void all_ClientListIsEmptyFirst() {
     assertEquals(Client.all().size(), 0);
   }
+
+  @Test
+  public void equals_returnsTrueIfNamesAreSame() {
+    Client firstClient = new Client("Sara", 1);
+    Client secondClient = new Client("Sara", 1);
+    assertTrue(firstClient.equals(secondClient));
+  }
 }
