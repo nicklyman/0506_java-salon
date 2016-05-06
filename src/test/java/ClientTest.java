@@ -31,4 +31,9 @@ public class ClientTest {
     Client testClient = new Client("Sara", 1);
     assertEquals("Sara", testClient.getClientName());
   }
+
+  @Test
+  public void all_ClientListIsEmptyFirst() {
+    assertEquals(Client.all().size(), 0);
+  }
 }

@@ -15,4 +15,11 @@ public class Client {
   public String getClientName() {
     return client_name;
   }
+
+  public static List<Client> all() {
+    String sql = "SELECT * FROM clients";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Client.class);
+    }
+  }
 }
