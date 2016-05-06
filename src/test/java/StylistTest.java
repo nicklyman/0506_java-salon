@@ -43,4 +43,12 @@ public class StylistTest {
     Stylist secondStylist = new Stylist("Joe");
     assertTrue(firstStylist.equals(secondStylist));
   }
+
+  @Test
+  public void save_assignsIdToObject() {
+    Stylist testStylist = new Stylist("Joe");
+    testStylist.save();
+    Stylist savedStylist = Stylist.all().get(0);
+    assertEquals(testStylist.getStylistId(), savedStylist.getStylistId());
+  }
 }
