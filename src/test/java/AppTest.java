@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.fluentlenium.core.filter.FilterConstructor.*;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
@@ -29,4 +30,14 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("View the List of Stylists");
     assertThat(pageSource()).contains("Add a New Stylist");
   }
+
+  @Test
+  public void stylistIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a New Stylist"));
+    fill("#stylist_name").with("Joe");
+    submit(".btn");
+    assertThat(pageSource()).contains("The new stylist has been added.");
+  }
+
 }
