@@ -51,4 +51,12 @@ public class StylistTest {
     Stylist savedStylist = Stylist.all().get(0);
     assertEquals(testStylist.getStylistId(), savedStylist.getStylistId());
   }
+
+  @Test
+  public void find_findStylistInDatabase_true() {
+    Stylist testStylist = new Stylist("Joe");
+    testStylist.save();
+    Stylist savedStylist = Stylist.find(testStylist.getStylistId());
+    assertTrue(testStylist.equals(savedStylist));
+  }
 }
