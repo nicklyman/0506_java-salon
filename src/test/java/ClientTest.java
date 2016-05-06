@@ -66,4 +66,21 @@ public class ClientTest {
     Client savedClient = Client.find(testClient.getClientId());
     assertTrue(testClient.equals(savedClient));
   }
+
+  // @Test
+  // public void update_updatesClientName_true() {
+  //   Client testClient = new Client("Sara", 1);
+  //   testClient.save();
+  //   testClient.update("Betty");
+  //   assertEquals("Betty", Client.find(testClient.getClientId()).getClientName());
+  // }
+  //
+  // @Test
+  // public void delete_deletesClientName_true() {
+  //   Client testClient = new Client("Sara", 1);
+  //   testClient.save();
+  //   int testClientId = testClient.getClientId();
+  //   testClient.delete();
+  //   assertEquals(null, Client.find(testClientId));
+  // }
 }
