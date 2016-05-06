@@ -96,4 +96,14 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Joey");
   }
 
+  @Test
+  public void stylistDelete() {
+    Stylist testStylist = new Stylist("Joe");
+    testStylist.save();
+    String stylistPath = String.format("http://localhost:4567/stylists/%d", testStylist.getStylistId());
+    goTo(stylistPath);
+    submit("#delete-stylist");
+    assertEquals(0, Stylist.all().size());
+    assertThat(pageSource()).contains("The stylist has been removed from the directory.");
+  }
 }

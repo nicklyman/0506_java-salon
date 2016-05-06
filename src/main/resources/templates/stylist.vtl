@@ -6,6 +6,8 @@
   #end
 </ul>
 
+<a href="/stylists/$stylist.getStylistId()/clients/new" class="btn btn-primary">Add a New Client</a>
+
 <p>Edit stylist:</p>
 
 <form action="/stylists/$stylist.getStylistId()" method="post">
@@ -14,5 +16,8 @@
   <button type="submit" class="btn btn-success" id="update-stylist">Update Stylist</button>
 </form>
 
-<a href="/stylists/$stylist.getStylistId()/clients/new" class="btn btn-primary">Add a New Client</a>
+<form action="/stylists/$stylist.getStylistId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete-stylist">Delete Stylist</button>
+</form>
+
 <a href="/stylists" class="btn btn-primary">View the List of Stylists</a>
