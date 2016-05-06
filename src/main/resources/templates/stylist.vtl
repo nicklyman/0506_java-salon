@@ -6,5 +6,13 @@
   #end
 </ul>
 
+<p>Edit stylist:</p>
+
+<form action="/stylists/$stylist.getStylistId()" method="post">
+  <label for="stylist_name">Edit the stylist's name here:</label>
+  <input id="stylist_name" name="stylist_name" type="text">
+  <button type="submit" class="btn btn-success" id="update-stylist">Update Stylist</button>
+</form>
+
 <a href="/stylists/$stylist.getStylistId()/clients/new" class="btn btn-primary">Add a New Client</a>
 <a href="/stylists" class="btn btn-primary">View the List of Stylists</a>

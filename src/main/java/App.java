@@ -37,15 +37,15 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // post("/stylists/:id", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
-    //   String stylist_name = request.queryParams("stylist_name");
-    //   stylist.update(stylist_name);
-    //   String url = String.format("/stylists/%d", stylist.getStylistId());
-    //   response.redirect(url);
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    post("/stylists/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
+      String stylist_name = request.queryParams("stylist_name");
+      stylist.update(stylist_name);
+      String url = String.format("/stylists/%d", stylist.getStylistId());
+      response.redirect(url);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     get("/stylists/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
