@@ -72,14 +72,14 @@ public class StylistTest {
     assertTrue(testStylist.getClients().containsAll(Arrays.asList(clients)));
   }
 
-  // @Test
-  // public void update_updatesStylistName_true() {
-  //   Stylist testStylist = new Stylist("Joe");
-  //   testStylist.save();
-  //   testStylist.update("Joey");
-  //   assertEquals("Joey", Stylist.find(testStylist.getStylistId()).getStylistName());
-  // }
-  //
+  @Test
+  public void update_updatesStylistName_true() {
+    Stylist testStylist = new Stylist("Joe");
+    testStylist.save();
+    testStylist.update("Joey");
+    assertEquals("Joey", Stylist.find(testStylist.getStylistId()).getStylistName());
+  }
+  
   // @Test
   // public void delete_deletesStylistName_true() {
   //   Stylist testStylist = new Stylist("Joe");

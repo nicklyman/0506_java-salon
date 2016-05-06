@@ -63,4 +63,14 @@ public class Stylist {
         .executeAndFetch(Client.class);
     }
   }
+
+  public void update(String stylist_name) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE stylists SET stylist_name = :stylist_name WHERE id=:id";
+      con.createQuery(sql)
+        .addParameter("stylist_name", stylist_name)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
 }
