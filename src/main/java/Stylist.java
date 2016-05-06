@@ -9,4 +9,8 @@ public class Stylist {
   public Stylist(String stylist_name) {
     this.stylist_name = stylist_name;
   }
+
+  public String getStylistName() {
+    return stylist_name;
+  }
 }

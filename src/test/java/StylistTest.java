@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 
 public class StylistTest {
-  
+
   @Before
   public void setUp() {
     DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/hair_salon_test", null, null);
@@ -24,5 +24,11 @@ public class StylistTest {
   public void Stylist_instantiatesCorrectly_true() {
     Stylist testStylist = new Stylist("Joe");
     assertEquals(true, testStylist instanceof Stylist);
+  }
+
+  @Test
+  public void Stylist_instantiatesWithStylistName_String() {
+    Stylist testStylist = new Stylist("Joe");
+    assertEquals("Joe", testStylist.getStylistName());
   }
 }
