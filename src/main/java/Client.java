@@ -16,6 +16,10 @@ public class Client {
     return client_name;
   }
 
+  public int getClientId() {
+    return id;
+  }
+
   public static List<Client> all() {
     String sql = "SELECT * FROM clients";
     try(Connection con = DB.sql2o.open()) {
