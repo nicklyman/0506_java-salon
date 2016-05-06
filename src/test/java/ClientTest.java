@@ -74,13 +74,13 @@ public class ClientTest {
     testClient.update("Betty");
     assertEquals("Betty", Client.find(testClient.getClientId()).getClientName());
   }
-  
-  // @Test
-  // public void delete_deletesClientName_true() {
-  //   Client testClient = new Client("Sara", 1);
-  //   testClient.save();
-  //   int testClientId = testClient.getClientId();
-  //   testClient.delete();
-  //   assertEquals(null, Client.find(testClientId));
-  // }
+
+  @Test
+  public void delete_deletesClientName_true() {
+    Client testClient = new Client("Sara", 1);
+    testClient.save();
+    int testClientId = testClient.getClientId();
+    testClient.delete();
+    assertEquals(null, Client.find(testClientId));
+  }
 }
