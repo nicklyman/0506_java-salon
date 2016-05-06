@@ -29,7 +29,7 @@ _This web app uses Java and a SQL database for storing and keeping track of the 
 _Database details listed below:_
 * _CREATE DATABASE hair_salon_
 * _CREATE TABLE stylists (id serial PRIMARY KEY, stylist_name varchar)_
-* _CREATE TABLE clients (id serial PRIMARY KEY, client_name varchar, stylist_id int)
+* _CREATE TABLE clients (id serial PRIMARY KEY, client_name varchar, stylist_id int)_
 * _CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon_
 
 ## Known Bugs
