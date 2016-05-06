@@ -32,4 +32,15 @@ public class Client {
       return this.getClientName().equals(newClient.getClientName());
     }
   }
+
+  public void save(){
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO clients (client_name, stylist_id) VALUES (:name, :stylist_id)";
+      this.id = (int) con.createQuery(sql, true)
+        .addParameter("name" , this.client_name)
+        .addParameter("stylist_id", this.stylist_id)
+        .executeUpdate()
+        .getKey();
+    }
+  }
 }
