@@ -24,7 +24,9 @@ public class AppTest extends FluentTest {
 
   @Test
   public void rootTest() {
-
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Find the best hair stylists in town!");
+    assertThat(pageSource()).contains("View the List of Stylists");
+    assertThat(pageSource()).contains("Add a New Stylist");
   }
-
 }
