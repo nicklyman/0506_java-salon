@@ -34,7 +34,7 @@ _Database details listed below:_
 
 ## Known Bugs
 
-_No known bugs_
+_Not currently able to update or delete clients and some links not working properly_
 
 ## Support and contact details
 
