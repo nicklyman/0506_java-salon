@@ -2,4 +2,18 @@
 
 <hr>
 
-<a href="/stylists/$stylist.getStylistId()">Return to $stylist.getStylistName()</a>
+<form action="/stylists/$client.getStylistId()/clients/$client.getClientId()" method="post">
+  <label for="client_name">Edit the client's name here:</label>
+  <input id="client_name" name="client_name" type="text">
+  <button type="submit" class="btn btn-info" id="update_client">Update Client's Name</button>
+</form>
+
+<hr>
+
+<form action="/stylists/$client.getStylistId()/clients/$client.getClientId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete_client">Delete Client</button>
+</form>
+
+<hr>
+
+<a href="/stylists/$stylist.getStylistId()" class="btn btn-primary">Return to the full list of clients for $stylist.getStylistName()</a>

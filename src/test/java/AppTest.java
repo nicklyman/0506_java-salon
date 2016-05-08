@@ -92,7 +92,7 @@ public class AppTest extends FluentTest {
     String stylistPath = String.format("http://localhost:4567/stylists/%d", testStylist.getStylistId());
     goTo(stylistPath);
     fill("#stylist_name").with("Joey");
-    submit("#update-stylist");
+    submit("#update_stylist");
     assertThat(pageSource()).contains("Joey");
   }
 
@@ -102,8 +102,33 @@ public class AppTest extends FluentTest {
     testStylist.save();
     String stylistPath = String.format("http://localhost:4567/stylists/%d", testStylist.getStylistId());
     goTo(stylistPath);
-    submit("#delete-stylist");
+    submit("#delete_stylist");
     assertEquals(0, Stylist.all().size());
     assertThat(pageSource()).contains("The stylist has been removed from the directory.");
   }
+
+  // @Test
+  // public void clientUpdate() {
+  //   Stylist testStylist = new Stylist("Chopper");
+  //   testStylist.save();
+  //   Client testClient = new Client("Jean", testStylist.getStylistId());
+  //   testClient.save();
+  //   String clientPath = String.format("http://localhost:4567/stylists/%d/clients/%d", testStylist.getStylistId(), testClient.getClientId());
+  //   goTo(clientPath);
+  //   fill("#client_name").with("Betty-Jean");
+  //   submit("#update_client");
+  //   assertThat(pageSource()).contains("Betty-Jean");
+  // }
+
+  // @Test
+  // public void clientDelete() {
+  //   Stylist testStylist = new Stylist("Chopper");
+  //   testStylist.save();
+  //   Client testClient = new Client("Jane", testStylist.getStylistId());
+  //   testClient.save();
+  //   String clientPath = String.format("http://localhost:4567/categories/%d/clients/%d", testStylist.getStylistId(), testClient.getClientId());
+  //   goTo(clientPath);
+  //   submit("#delete_client");
+  //   assertEquals(0, Client.all().size());
+  // }
 }
