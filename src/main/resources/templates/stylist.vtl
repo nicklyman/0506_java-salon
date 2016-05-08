@@ -1,14 +1,18 @@
 <h1>$stylist.getStylistName()</h1>
 
+<hr>
+
 <ul>
   #foreach($client in $stylist.getClients())
   <li><a href="/clients">$client.getClientName()</a></li>
   #end
 </ul>
 
+<hr>
+
 <a href="/stylists/$stylist.getStylistId()/clients/new" class="btn btn-primary">Add a New Client</a>
 
-<p>Edit stylist:</p>
+<hr>
 
 <form action="/stylists/$stylist.getStylistId()" method="post">
   <label for="stylist_name">Edit the stylist's name here:</label>
@@ -16,8 +20,12 @@
   <button type="submit" class="btn btn-success" id="update-stylist">Update Stylist</button>
 </form>
 
+<hr>
+
 <form action="/stylists/$stylist.getStylistId()/delete" method="post">
   <button type="submit" class="btn btn-danger" id="delete-stylist">Delete Stylist</button>
 </form>
+
+<hr>
 
 <a href="/stylists" class="btn btn-primary">View the List of Stylists</a>
