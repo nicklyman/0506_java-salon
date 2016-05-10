@@ -18,8 +18,9 @@ _This web app uses Java and a SQL database for storing and keeping track of the 
 * _Use your command line to access the cloned repository on your computer_
 * _Have Postgres SQL installed on your computer_
 * _Use the command line to start Postgres SQL by typing "psql" without quotes into the command prompt and create a database as follows: CREATE DATABASE hair_salon_
+* _After the hair_salon database is created, type \c hair_salon to connect to that database prior to building any database tables_
 * _Next, create your stylist database table as follows: CREATE TABLE stylists (id serial PRIMARY KEY, stylist_name varchar)_
-* _Next, create your client database table as follows: CREATE TABLE clientes (id serial PRIMARY KEY, client_name varchar, stylist_id int)_
+* _Next, create your client database table as follows: CREATE TABLE clients (id serial PRIMARY KEY, client_name varchar, stylist_id int)_
 * _Now the two tables are linked together using the PRIMARY KEY of the stylist with the stylist_id in the clients table_
 * _For creating a testing database, type: CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon_
 * _In a seperate tab in the command prompt, type "gradle run" without quotation marks in the command line and it should build the application_
