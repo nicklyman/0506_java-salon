@@ -2,7 +2,7 @@
 
 <hr>
 
-<form action="/clients" method="post">
+<form action="/stylists/$stylist.getStylistId()/clients" method="post">
   <input id="stylist_id" name="stylist_id" type="hidden" value="$stylist.getStylistId()">
 
   <div class="form-group">
